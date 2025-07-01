@@ -1,7 +1,11 @@
+const AutoIncrementFactory = require('mongoose-sequence');
+
 module.exports = app => {
   const mongoose = app.mongoose;
+  const AutoIncrement = AutoIncrementFactory(mongoose);
+
   const Schema = mongoose.Schema;
-  const projectSchema = new Schema({
+  const UserSchema = new Schema({
     username: { type: String, unique: true, required: true },
     password: { type: String },
     nickName: { type: String },
@@ -17,8 +21,10 @@ module.exports = app => {
     toJSON: {
       transform(_doc, ret) {
         delete ret.password;
+        delete ret.__v;
       },
     },
   });
-  return mongoose.model('user', projectSchema);
+  UserSchema.plugin(AutoIncrement, { inc_field: 'id', id: 'users_id_counter' });
+  return mongoose.model('user', UserSchema);
 };

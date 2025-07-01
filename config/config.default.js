@@ -27,6 +27,10 @@ module.exports = appInfo => {
     url: 'mongodb://127.0.0.1:27017/lego?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.1',
   };
 
+  config.bcrypt = {
+    saltRounds: 10,
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
