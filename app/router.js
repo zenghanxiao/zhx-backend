@@ -10,4 +10,7 @@ module.exports = app => {
   router.get('/users/getUserInfo', controller.user.show);
   router.post('/users/loginByEmail', controller.user.loginByEmail);
   router.post('/users/genVeriCode', controller.user.sendVeriCode);
+  router.post('/users/loginByPhoneNumber', controller.user.loginByCellphone);
+  router.get('/users/passport/gitee', controller.user.oauth);
+  router.get('/users/passport/gitee/callback', controller.user.oauthByGitee);
 };

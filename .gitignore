@@ -18,3 +18,5 @@ typings/
 uploads/
 app/public
 .docker-volumes/
+
+log.txt

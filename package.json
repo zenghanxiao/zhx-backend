@@ -13,6 +13,7 @@
     "dotenv": "^17.0.1",
     "egg": "^3.17.5",
     "egg-bcrypt": "^1.1.0",
+    "egg-cors": "^3.0.1",
     "egg-jwt": "^3.1.7",
     "egg-mongoose": "^4.0.1",
     "egg-redis": "^2.6.1",

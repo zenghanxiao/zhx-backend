@@ -125,7 +125,22 @@ class UserController extends Controller {
     ctx.helper.success({ ctx, msg: '验证码发送成功',
       res: app.config.env === 'local' ? { veriCode } : null });
   }
-
+  async oauth() {
+    const { app, ctx } = this;
+    const { cid, redirectURL } = app.config.giteeOauthConfig;
+    ctx.redirect(`https://gitee.com/oauth/authorize?client_id=${cid}&redirect_uri=${redirectURL}&response_type=code`);
+  }
+  async oauthByGitee() {
+    const { ctx } = this;
+    const { code } = ctx.request.query;
+    try {
+      const token = await ctx.service.user.loginByGitee(code);
+      await ctx.render('success.nj', { token });
+      // ctx.helper.success({ ctx, res: { token } })
+    } catch (e) {
+      return ctx.helper.error({ ctx, errorType: 'giteeOauthError' });
+    }
+  }
   async show() {
     const { ctx, service } = this;
     // const userData = await service.user.findById(ctx.params.id);

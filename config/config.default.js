@@ -49,6 +49,11 @@ module.exports = appInfo => {
     },
   };
 
+  // config.cors = {
+  //   origin: 'http://localhost:8080',
+  //   allowMethods: 'GET,HEAD,PUT,OPTIONS,POST,DELETE,PATCH'
+  // }
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
@@ -61,6 +66,13 @@ module.exports = appInfo => {
       accessKeyId: 'xx', // process.env.ALC_ACCESS_KEY,
       accessKeySecret: 'xx', // process.env.ALC_SECRET_KEY,
       endpoint: 'dysmsapi.aliyuncs.com',
+    },
+    giteeOauthConfig: {
+      cid: 'xx', // process.env.GITEE_CID,
+      secret: 'xx', // process.env.GITEE_SECRET,
+      redirectURL: 'http://localhost:7001/api/users/passport/gitee/callback',
+      authURL: 'https://gitee.com/oauth/token?grant_type=authorization_code',
+      giteeUserAPI: 'https://gitee.com/api/v5/user',
     },
   };
 
