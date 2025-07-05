@@ -80,6 +80,18 @@ class WorkController extends Controller {
     const res = await this.ctx.model.Work.findOneAndDelete({ id }).select('_id id title').lean();
     ctx.helper.success({ ctx, res });
   }
+  // @checkPermission('Work', 'workNoPermissonFail', { action: 'publish' })
+  async publish(isTemplate) {
+    const { ctx } = this;
+    const url = await this.service.work.publish(ctx.params.id, isTemplate);
+    ctx.helper.success({ ctx, res: { url } });
+  }
+  async publishWork() {
+    await this.publish(false);
+  }
+  async publishTemplate() {
+    await this.publish(true);
+  }
 }
 
 module.exports = WorkController;
