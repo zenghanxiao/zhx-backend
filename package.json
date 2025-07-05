@@ -19,7 +19,8 @@
     "egg-redis": "^2.6.1",
     "egg-scripts": "2",
     "egg-validate": "^2.0.2",
-    "mongoose-sequence": "^6.0.1"
+    "mongoose-sequence": "^6.0.1",
+    "nanoid": "^5.1.5"
   },
   "devDependencies": {
     "egg-bin": "6",

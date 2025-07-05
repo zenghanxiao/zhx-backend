@@ -74,6 +74,7 @@ module.exports = appInfo => {
       authURL: 'https://gitee.com/oauth/token?grant_type=authorization_code',
       giteeUserAPI: 'https://gitee.com/api/v5/user',
     },
+    H5BaseURL: 'http://localhost:7001/api/pages',
   };
 
   return {

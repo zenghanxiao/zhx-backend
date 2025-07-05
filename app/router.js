@@ -13,4 +13,8 @@ module.exports = app => {
   router.post('/users/loginByPhoneNumber', controller.user.loginByCellphone);
   router.get('/users/passport/gitee', controller.user.oauth);
   router.get('/users/passport/gitee/callback', controller.user.oauthByGitee);
+
+  router.post('/works', controller.work.createWork);
+  router.post('/works/copy/:id', controller.work.copyWork);
+  router.get('/works', controller.work.myList);
 };
