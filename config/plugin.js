@@ -31,5 +31,9 @@ module.exports = {
     enable: true,
     package: 'egg-cors',
   },
+  oss: {
+    enable: true,
+    package: 'egg-oss',
+  },
 };
 

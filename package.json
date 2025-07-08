@@ -10,17 +10,21 @@
     "@alicloud/dysmsapi20170525": "^4.1.2",
     "@alicloud/openapi-client": "^0.4.14",
     "axios": "^1.10.0",
+    "busboy": "^1.6.0",
     "dotenv": "^17.0.1",
     "egg": "^3.17.5",
     "egg-bcrypt": "^1.1.0",
     "egg-cors": "^3.0.1",
     "egg-jwt": "^3.1.7",
     "egg-mongoose": "^4.0.1",
+    "egg-multipart": "^3.5.0",
+    "egg-oss": "^3.1.0",
     "egg-redis": "^2.6.1",
     "egg-scripts": "2",
     "egg-validate": "^2.0.2",
     "mongoose-sequence": "^6.0.1",
-    "nanoid": "^5.1.5"
+    "nanoid": "^5.1.5",
+    "stream-wormhole": "^2.0.1"
   },
   "devDependencies": {
     "egg-bin": "6",

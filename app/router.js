@@ -17,4 +17,6 @@ module.exports = app => {
   router.post('/works', controller.work.createWork);
   router.post('/works/copy/:id', controller.work.copyWork);
   router.get('/works', controller.work.myList);
+
+  router.post('/utils/upload-img', controller.utils.uploadMutipleFiles);
 };

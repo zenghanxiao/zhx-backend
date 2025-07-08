@@ -1,5 +1,6 @@
 /* eslint valid-jsdoc: "off" */
 
+const { join } = require('path');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -49,10 +50,31 @@ module.exports = appInfo => {
     },
   };
 
+  config.multipart = {
+    whitelist: [ '.png', '.jpg', '.gif', '.webp' ],
+    fileSize: '1mb',
+  };
+
+  config.static = {
+    dir: [
+      { prefix: '/public', dir: join(appInfo.baseDir, 'app/public') },
+      { prefix: '/uploads', dir: join(appInfo.baseDir, 'uploads') },
+    ],
+  };
+
   // config.cors = {
   //   origin: 'http://localhost:8080',
   //   allowMethods: 'GET,HEAD,PUT,OPTIONS,POST,DELETE,PATCH'
   // }
+
+  config.oss = {
+    client: {
+      accessKeyId: 'xx', // process.env.ALC_ACCESS_KEY || '',
+      accessKeySecret: 'xx', // process.env.ALC_SECRET_KEY || '',
+      bucket: 'lego-backend',
+      endpoint: 'oss-cn-shanghai.aliyuncs.com',
+    },
+  };
 
   // add your user config here
   const userConfig = {
