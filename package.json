@@ -9,6 +9,7 @@
   "dependencies": {
     "@alicloud/dysmsapi20170525": "^4.1.2",
     "@alicloud/openapi-client": "^0.4.14",
+    "@vue/server-renderer": "^3.5.17",
     "axios": "^1.10.0",
     "busboy": "^1.6.0",
     "dotenv": "^17.0.1",
@@ -22,15 +23,25 @@
     "egg-redis": "^2.6.1",
     "egg-scripts": "2",
     "egg-validate": "^2.0.2",
+    "lego-components": "^0.1.7",
     "mongoose-sequence": "^6.0.1",
     "nanoid": "^5.1.5",
-    "stream-wormhole": "^2.0.1"
+    "stream-wormhole": "^2.0.1",
+    "vue": "^3.5.17"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
     "egg-bin": "6",
     "egg-mock": "5",
     "eslint": "8",
-    "eslint-config-egg": "13"
+    "eslint-config-egg": "13",
+    "filemanager-webpack-plugin": "^9.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "release-it": "^19.0.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -44,7 +55,11 @@
     "test:local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
-    "ci": "npm run lint && npm run cov"
+    "ci": "npm run lint && npm run cov",
+    "build:template:dev": "npx webpack --config webpack/webpack.config.js",
+    "build:template:prod": "npx webpack --config webpack/webpack.config.js --env production && npm run upload",
+    "upload": "node webpack/uploadToOSS.js",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",

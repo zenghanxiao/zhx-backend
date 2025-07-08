@@ -19,4 +19,5 @@ module.exports = app => {
   router.get('/works', controller.work.myList);
 
   router.post('/utils/upload-img', controller.utils.uploadMutipleFiles);
+  router.get('/pages/:idAndUuid', controller.utils.renderH5Page);
 };
