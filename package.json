@@ -9,6 +9,7 @@
   "dependencies": {
     "@alicloud/dysmsapi20170525": "^4.1.2",
     "@alicloud/openapi-client": "^0.4.14",
+    "@casl/ability": "^6.7.3",
     "@vue/server-renderer": "^3.5.17",
     "axios": "^1.10.0",
     "busboy": "^1.6.0",
@@ -24,6 +25,7 @@
     "egg-scripts": "2",
     "egg-validate": "^2.0.2",
     "lego-components": "^0.1.7",
+    "lodash": "^4.17.21",
     "mongoose-sequence": "^6.0.1",
     "nanoid": "^5.1.5",
     "stream-wormhole": "^2.0.1",
